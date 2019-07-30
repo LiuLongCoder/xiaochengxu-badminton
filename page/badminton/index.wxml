@@ -1,0 +1,17 @@
+<!--page/badminton/index.wxml-->
+<view class="index">
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+  <view>{{reqeustData}}</view>
+  <view>
+    <text>{{loginInfo}}</text>
+  </view>
+  <view>
+    <text>{{userInfo}}</text>
+  </view>
+  <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+    <view class="kind-list-text">{{item.title}}</view>
+    <block wx:for-items="{{item.persons}}" wx:for-item="person" wx:key="person.id">
+      <view>{{person.name}}</view>
+    </block>  
+  </block>    
+</view>
